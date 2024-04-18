@@ -1,28 +1,23 @@
 function setup() {
   createCanvas(600, 400);
 }
+// draw function function draw() {
+ ellipse (110,140,20,70); // purple circle
 
-function draw() {
-  background(200);
+  function draw() {
+    fill (300); 
 
   //this is a call to myShape()
-  myShape(width / 2, height / 2, 1);
-  // myShape() takes three arguments
-  // arg1: horizontal location
-  // arg2: vertical location
-  // arg3: scale factor (1 is full size)
-  /* add two more calls to myShape that draw your shape in different locations
-  */
-  
+  myShape(width / 2, height / 10, 50);
+  myShape(100, 200, 20, 40);
+  myShape(400, 150, 30, 45); 
 }
 
-function myShape(x, y, s) {
+function myShape(x, y, w, h) {
   // make this function more interesting
-  push(); // make a separate layer
-  translate(x, y); // move the origin point
-  scale(s);
-  
-  ellipse(0, 0, w, h); // simple ellipse at the translated origin (0,0)
-  
-  pop(); // dispose of the layer
+  fill(100, 0, 200); 
+  ellipse(x, y, w, h);
+  rectMode(CENTER);
+  fill(0); 
+  rect(x, y, h/2, w, h);
 }
